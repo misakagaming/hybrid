@@ -80,6 +80,10 @@ COPY . .
 
 WORKDIR /
 
+
+COPY code_summarization_public-master .
+
+
 RUN python -m pip install --upgrade pip \
     && python -m venv --system-site-packages /opt/python/venv/base
 	
@@ -101,7 +105,7 @@ RUN /opt/python/venv/base/bin/python -m pip install -r /opt/python/venv/base/req
 
 
 
-COPY code_summarization_public-master .
+
 
 
 COPY entrypoint.sh /entrypoint.sh
