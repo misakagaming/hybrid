@@ -81,7 +81,7 @@ COPY . .
 WORKDIR /
 
 
-COPY code_summarization_public-master .
+COPY  . .
 
 
 RUN python -m pip install --upgrade pip \
