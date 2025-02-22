@@ -80,8 +80,11 @@ COPY . .
 
 WORKDIR /
 
+RUN ls -l
 
 COPY  . .
+
+RUN ls -l
 
 
 RUN python -m pip install --upgrade pip \
