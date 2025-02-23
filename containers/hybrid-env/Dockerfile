@@ -44,10 +44,6 @@ COPY code_summarization_public-master .
 RUN python2.7 --version
 
 
-RUN python2.7 -m pip install -U virtualenv
-
-RUN python2.7 -m virtualenv --system-site-packages temp-python
-
 
 
 
