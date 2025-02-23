@@ -9,7 +9,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: misakagaming/hybrid-env
+  IMAGE_NAME: misakagaming/hybrid
   VERSION: latest
 
 jobs:
