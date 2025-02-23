@@ -9,7 +9,7 @@ import glob
 import os
 import argparse
 
-data_dir = "/media/BACKUP/ghproj_d/code_summarization/github-java/"
+data_dir = "/media/BACKUP/ghproj_d/code_summarization/github-python/"
 repos = ["apache-ant-1.8.4", "apache-maven-3.0.4",  "MinorThird", "apache-cassandra-1.2.0", "batik-1.7", "xalan-j-2.7.1", "apache-log4j-1.2.17", "lucene-3.6.2", "xerces-2.11.0"] #
 original_path = data_dir + "original/"
 processed_path = data_dir + "processed/"
