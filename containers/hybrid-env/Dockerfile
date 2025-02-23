@@ -48,7 +48,7 @@ RUN python -m pip install --upgrade pip
 
 RUN python2.7 --version
 
-RUN wget https://bootstrap.pypa.io/get-pip.py
+RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
 RUN python2.7 get-pip.py
 
 
