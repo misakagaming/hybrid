@@ -42,7 +42,7 @@ COPY code_summarization_public-master .
 
 RUN python2.7 --version
 
-RUN curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+RUN wget https://bootstrap.pypa.io/get-pip.py
 RUN python2.7 get-pip.py
 
 
