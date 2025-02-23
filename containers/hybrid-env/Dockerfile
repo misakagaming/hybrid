@@ -29,7 +29,11 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends \
 		python2.7 \
-		python-pip \
+        "python$PYTHON_VERSION-dev" \
+		"python$PYTHON_VERSION-distutils" \
+		python3-setuptools \
+        python3-pip \
+        "python$PYTHON_VERSION-venv" \
 		libstdc++6 \
 		gcc-multilib\
 		libc6 \
@@ -43,7 +47,8 @@ COPY code_summarization_public-master .
 
 RUN python2.7 --version
 
-
+RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
+RUN python2.7 get-pip.py
 
 
 
