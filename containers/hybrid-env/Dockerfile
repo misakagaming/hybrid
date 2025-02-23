@@ -52,7 +52,9 @@ RUN wget https://bootstrap.pypa.io/pip/2.7/get-pip.py
 RUN python2.7 get-pip.py
 
 
+RUN python2.7 -m pip install -U virtualenv
 
+RUN python2.7 -m virtualenv --system-site-packages temp-python
 
 
 
