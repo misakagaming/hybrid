@@ -1,4 +1,5 @@
-FROM gadgetron/ubuntu_1604_cuda75
+FROM nvidia/cuda:8.0-cudnn5-runtime-ubuntu16.04
+#FROM gadgetron/ubuntu_1604_cuda75
 #FROM aaii/cuda:9.2-cudnn7-devel-ubuntu18.04
 #FROM nvidia/cuda:11.2.2-devel-ubuntu20.04
 #FROM nvidia/cuda:12.2.0-devel-ubuntu22.04
