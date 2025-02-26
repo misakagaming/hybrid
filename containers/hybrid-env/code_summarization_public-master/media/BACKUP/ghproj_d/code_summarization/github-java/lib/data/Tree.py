@@ -7,10 +7,10 @@ import codecs
 import Constants
 from Dict import Dict
 import ast, asttokens
-# from ..parser.JavaLexer import JavaLexer
-# from ..parser.JavaParser import JavaParser
-# from ..parser.JavaListener import JavaListener
-# from antlr4 import *
+from ..parser.JavaLexer import JavaLexer
+from ..parser.JavaParser import JavaParser
+from ..parser.JavaListener import JavaListener
+from antlr4 import *
 import re
 import copy
 
