@@ -103,7 +103,7 @@ def python_tokenize(line):
     return [t for t in tokens if t.strip()]
 
 def java_tokenize(line):
-    stream = InputStream(line.decode('utf-8', 'ignore'))
+    stream = InputStream(line.encode('utf-8', 'ignore').decode('utf-8', 'ignore'))
     lexer = JavaLexer(stream)
     toks = CommonTokenStream(lexer)
     toks.fetch(500)
@@ -148,7 +148,7 @@ def saveVocabulary(name, vocab, file):
     vocab.writeFile(file)
 
 def java2tree(line):
-    stream = InputStream(line.decode('utf-8', 'ignore'))
+    stream = InputStream(line.encode('utf-8', 'ignore').decode('utf-8', 'ignore'))
     lexer = JavaLexer(stream)
     toks = CommonTokenStream(lexer)
     parser = JavaParser(toks)
