@@ -65,7 +65,8 @@ def makeData(which, srcFile, tgtFile, srcDicts, tgtDicts):
             code_sentences.append(srcLine)
             comment_sentences.append(tgtLine)
         else:
-            srcLine = sline.split()
+            #srcLine = sline.split()
+            srcLine = java_tokenize(sline)
             tgtLine = tline.split()
 
         if len(srcLine) <= opt.src_seq_length and len(tgtLine) <= opt.tgt_seq_length: # len(srcLine) <= opt.src_seq_length and
