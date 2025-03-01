@@ -73,27 +73,22 @@ def makeData(which, srcFile, tgtFile, srcDicts, tgtDicts):
             comment_sentences.append(tgtLine)
 
         if len(srcLine) <= opt.src_seq_length and len(tgtLine) <= opt.tgt_seq_length: # len(srcLine) <= opt.src_seq_length and
-            try:
-                # Given a line of source code, build a tree and save it as dictionary
-                if opt.data_name.split('-')[1] == 'python':
-                    atok, tree = python2tree(sline)
-                    tree_json = traverse_python_tree(atok, tree)
-                elif opt.data_name.split('-')[1] == 'java':
-                    tree = java2tree(sline)
-                    # tree_json = {}
-                    tree_json, _ = traverse_java_tree(tree, tree_json)
-                tree_json = split_tree(tree_json, len(tree_json))
-                tree_json = merge_tree(tree_json)
-                # if len(tree_json) < opt.src_seq_length:
-                trees += [tree_json]
+            # Given a line of source code, build a tree and save it as dictionary
+            if opt.data_name.split('-')[1] == 'python':
+                atok, tree = python2tree(sline)
+                tree_json = traverse_python_tree(atok, tree)
+            elif opt.data_name.split('-')[1] == 'java':
+                tree = java2tree(sline)
+                # tree_json = {}
+                tree_json, _ = traverse_java_tree(tree, tree_json)
+            tree_json = split_tree(tree_json, len(tree_json))
+            tree_json = merge_tree(tree_json)
+            # if len(tree_json) < opt.src_seq_length:
+            trees += [tree_json]
 
-                src += [srcDicts.convertToIdx(srcLine, Constants.UNK_WORD)]
-                tgt += [tgtDicts.convertToIdx(tgtLine, Constants.UNK_WORD, eosWord=Constants.EOS_WORD)]
-                sizes += [len(src)]
-            except Exception as e:
-                #print('Exception: ', e)
-                #print(sline)
-                exceps += 1
+            src += [srcDicts.convertToIdx(srcLine, Constants.UNK_WORD)]
+            tgt += [tgtDicts.convertToIdx(tgtLine, Constants.UNK_WORD, eosWord=Constants.EOS_WORD)]
+            sizes += [len(src)]
         else:
             print('Too long')
             ignored += 1
