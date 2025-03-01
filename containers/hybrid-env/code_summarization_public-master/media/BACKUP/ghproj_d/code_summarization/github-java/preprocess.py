@@ -91,8 +91,8 @@ def makeData(which, srcFile, tgtFile, srcDicts, tgtDicts):
                 tgt += [tgtDicts.convertToIdx(tgtLine, Constants.UNK_WORD, eosWord=Constants.EOS_WORD)]
                 sizes += [len(src)]
             except Exception as e:
-                print('Exception: ', e)
-                print(sline)
+                #print('Exception: ', e)
+                #print(sline)
                 exceps += 1
         else:
             print('Too long')
