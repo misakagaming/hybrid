@@ -68,6 +68,9 @@ def makeData(which, srcFile, tgtFile, srcDicts, tgtDicts):
             #srcLine = sline.split()
             srcLine = java_tokenize(sline)
             tgtLine = tline.split()
+            code_sentences.append(sline.split())
+            code_sentences.append(srcLine)
+            comment_sentences.append(tgtLine)
 
         if len(srcLine) <= opt.src_seq_length and len(tgtLine) <= opt.tgt_seq_length: # len(srcLine) <= opt.src_seq_length and
             try:
@@ -89,7 +92,7 @@ def makeData(which, srcFile, tgtFile, srcDicts, tgtDicts):
                 sizes += [len(src)]
             except Exception as e:
                 print('Exception: ', e)
-                #print(sline.decode('cp1252').encode('utf-8'))
+                print(sline)
                 exceps += 1
         else:
             print('Too long')
