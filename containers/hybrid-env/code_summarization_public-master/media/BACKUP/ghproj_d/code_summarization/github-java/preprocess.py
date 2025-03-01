@@ -66,6 +66,7 @@ def makeData(which, srcFile, tgtFile, srcDicts, tgtDicts):
             comment_sentences.append(tgtLine)
         else:
             #srcLine = sline.split()
+            sline = sline..encode('utf-8', 'ignore').decode('utf-8', 'ignore')
             srcLine = java_tokenize(sline)
             tgtLine = tline.split()
 
