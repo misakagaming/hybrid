@@ -66,7 +66,7 @@ def makeData(which, srcFile, tgtFile, srcDicts, tgtDicts):
             comment_sentences.append(tgtLine)
         else:
             #srcLine = sline.split()
-            sline = sline.encode('utf-8', 'ignore').decode('utf-8', 'ignore')
+            sline = sline.decode('cp1252').encode('utf-8')
             srcLine = java_tokenize(sline)
             tgtLine = tline.split()
 
@@ -90,7 +90,7 @@ def makeData(which, srcFile, tgtFile, srcDicts, tgtDicts):
                 sizes += [len(src)]
             except Exception as e:
                 print('Exception: ', e)
-                print(sline.encode('utf-8', 'ignore').decode('utf-8', 'ignore'))
+                print(sline.decode('cp1252').encode('utf-8'))
                 exceps += 1
         else:
             print('Too long')

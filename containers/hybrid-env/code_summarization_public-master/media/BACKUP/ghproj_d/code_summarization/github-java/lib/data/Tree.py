@@ -148,7 +148,7 @@ def saveVocabulary(name, vocab, file):
     vocab.writeFile(file)
 
 def java2tree(line):
-    stream = InputStream(line.encode('utf-8', 'ignore').decode('utf-8', 'ignore'))
+    stream = InputStream(line.decode('cp1252').encode('utf-8'))
     lexer = JavaLexer(stream)
     toks = CommonTokenStream(lexer)
     parser = JavaParser(toks)
