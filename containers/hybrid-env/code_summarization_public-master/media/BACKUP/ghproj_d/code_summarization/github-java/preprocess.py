@@ -93,7 +93,7 @@ def makeData(which, srcFile, tgtFile, srcDicts, tgtDicts):
                 tgt += [tgtDicts.convertToIdx(tgtLine, Constants.UNK_WORD, eosWord=Constants.EOS_WORD)]
                 sizes += [len(src)]
             except Exception as e:
-                print('Exception: ', e)
+                #print('Exception: ', e)
                 print(sline)
                 exceps += 1
         else:
@@ -122,11 +122,11 @@ def makeDataGeneral(which, src_path, tgt_path, dicts):
 
 def main():
     torch.manual_seed(opt.seed)
-
+    print("dicts")
     dicts = {}
     dicts['src'] = initVocabulary(opt, 'code', opt.train_src, opt.src_vocab_size)
     dicts['tgt'] = initVocabulary(opt, 'comment', opt.train_tgt, opt.tgt_vocab_size)
-
+    
     dicts['src'].writeFile(opt.save_data + '.code.dict')
     dicts['tgt'].writeFile(opt.save_data + '.comment.dict')
 
